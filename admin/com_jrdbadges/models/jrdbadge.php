@@ -135,4 +135,36 @@ class JrdbadgesModelJrdbadge extends JModelAdmin
         $pk = JFactory::getApplication()->input->getInt($key);
         $this->setState($this->getName() . '.id', $pk);
     }
+
+    /**
+     * Prepare and sanitise the table prior to saving.
+     *
+     * @param   JTable    $table
+     *
+     * @return  void
+     * @since   1.6
+     */
+    protected function prepareTable($table)
+    {
+        $date = JFactory::getDate();
+        $user = JFactory::getUser();
+
+        $table->alias = JApplication::stringURLSafe($table->alias);
+
+        if (empty($table->alias))
+        {
+            $table->alias = JApplication::stringURLSafe($table->name);
+        }
+        if (empty($table->id))
+        {
+            // Set the values
+            $table->created = $date->toSql();
+        }
+        else
+        {
+            // Set the values
+            $table->modified = $date->toSql();
+            $table->modified_by = $user->get('id');
+        }
+    }
 }

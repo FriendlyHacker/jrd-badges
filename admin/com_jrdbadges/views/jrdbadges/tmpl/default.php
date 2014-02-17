@@ -32,7 +32,38 @@ JHtml::_('formbehavior.chosen', 'select');
             <?php echo JText::_('JGLOBAL_NO_MATCHING_RESULTS'); ?>
         </div>
     <?php else : ?>
-
+        <table class="table table-striped" id="badge-list">
+            <thead>
+                <tr>
+                    <th width="1%" style="min-width:55px" class="nowrap center">
+                        <?php echo JHtml::_('grid.sort', 'JSTATUS', 'a.published'); ?>
+                    </th>
+                    <th>
+                        <?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.title'); ?>
+                    </th>
+                    <th width="1%" class="nowrap center hidden-phone">
+                        <?php echo JHtml::_('grid.sort', 'JGRID_HEADING_ID', 'a.id'); ?>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+                $n = count($this->items);
+                foreach ($this->items as $i => $item) :
+            ?>
+                <tr class="row<?php echo $i % 2; ?>" sortable-group-id="<?php echo $item->catid?>">
+                    <td>
+                        <?php echo $this->escape($item->state);  ?>
+                    </td>
+                    <td>
+                      <?php echo $this->escape($item->title);  ?>
+                    </td>
+                    <td class="center hidden-phone">
+                        <?php echo $item->id; ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
     <?php endif; ?>
 
         <input type="hidden" name="task" value="" />

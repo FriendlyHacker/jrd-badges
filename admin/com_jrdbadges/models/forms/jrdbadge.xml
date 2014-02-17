@@ -16,6 +16,11 @@
            hint="JFIELD_ALIAS_PLACEHOLDER"
            class="inputbox" size="40" />
 
+    <field name="badge" type="textarea" label="Badge Image Link"
+           description="Badge Link"
+           hint="Badge Link"
+           class="inputbox" size="40" />
+
     <field name="state" type="list" label="JSTATUS"
            description="JFIELD_PUBLISHED_DESC" class="chzn-color-state"
            filter="intval" size="1" default="1"
