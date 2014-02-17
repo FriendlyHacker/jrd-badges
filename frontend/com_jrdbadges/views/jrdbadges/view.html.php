@@ -12,10 +12,21 @@
 
 defined('_JEXEC') or die;
 
+
 class JrdbadgesViewJrdbadges extends JViewLegacy
 {
+
+    // list of badges
+    protected $items;
+
+    // zoo author link
+    protected $zooItemLink;
+
     public function display($tpl = null)
     {
+        $this->items = $this->get('Items');
+        $this->zooItemLink = $this->get('zooItemLink');
+
         parent::display($tpl);
     }
 }
