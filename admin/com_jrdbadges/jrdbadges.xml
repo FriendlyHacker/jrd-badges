@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1" method="upgrade">
+    <name>com_jrdbadges</name>
+    <author>Chad Windnagle</author>
+    <creationDate>Feb 2014</creationDate>
+    <copyright>(C) 2005 - 2014 Open Source Matters. All rights reserved.	</copyright>
+    <license>GNU General Public License version 2 or later; see	LICENSE.txt</license>
+    <authorEmail>chad@cohesivewebsites.com</authorEmail>
+    <authorUrl>www.cohesivewebsites.org</authorUrl>
+    <version>1.0.0</version>
+    <description>JRD Badge component</description>
+    <files folder="frontend">
+        <filename>jrdbadges.php</filename>
+        <filename>controller.php</filename>
+    </files>
+    <administration>
+        <files folder="admin">
+            <filename>jrdbadges.php</filename>
+            <filename>controller.php</filename>
+        </files>
+    </administration>
+</extension>
