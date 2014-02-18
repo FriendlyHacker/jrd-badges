@@ -39,11 +39,9 @@ class JrdbadgesViewJrdbadge extends JViewLegacy
         $isNew		= ($this->item->id == 0);
 
         // For new records, check the create permission.
-        if ($isNew)
-        {
-            JToolbarHelper::apply('jrdbadge.apply');
-            JToolbarHelper::save('jrdbadge.save');
-            JToolbarHelper::cancel('jrdbadge.cancel');
-        }
+        JToolbarHelper::apply('jrdbadge.apply');
+        JToolbarHelper::save('jrdbadge.save');
+        JToolbarHelper::cancel('jrdbadge.cancel');
+
     }
 }

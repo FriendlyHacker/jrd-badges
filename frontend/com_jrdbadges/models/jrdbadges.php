@@ -45,7 +45,7 @@ class JrdbadgesModelJrdbadges extends JModelList
         // Select the required fields from the table.
         $query->select('*');
         $query->from('#__jrdbadges AS a');
-        $query->where('state=1'); // only published listings
+        $query->where('published=1'); // only published listings
 
         return $query;
     }

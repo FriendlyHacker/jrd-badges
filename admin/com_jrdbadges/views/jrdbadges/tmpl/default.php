@@ -57,12 +57,12 @@ JHtml::_('formbehavior.chosen', 'select');
                 $n = count($this->items);
                 foreach ($this->items as $i => $item) :
             ?>
-                <tr class="row<?php echo $i % 2; ?>" sortable-group-id="<?php echo $item->catid?>">
+                <tr class="row<?php echo $i % 2; ?>">
                     <td class="center hidden-phone">
                         <?php echo JHtml::_('grid.id', $i, $item->id); ?>
                     </td>
                     <td>
-                        <?php echo JHtml::_('jgrid.published', $item->state, $i, 'contacts.', true, 'cb'); ?>
+                        <?php echo JHtml::_('jgrid.published', $item->published, $i, 'jrdbadges.', true, 'cb'); ?>
                     </td>
                     <td>
                       <?php echo $this->escape($item->title);  ?>
@@ -97,8 +97,8 @@ JHtml::_('formbehavior.chosen', 'select');
         </table>
     <?php endif; ?>
 
-        <input type="hidden" name="task" value="" />
-        <input type="hidden" name="boxchecked" value="0" />
-        <?php echo JHtml::_('form.token'); ?>
+            <input type="hidden" name="task" value="" />
+            <input type="hidden" name="boxchecked" value="0" />
+            <?php echo JHtml::_('form.token'); ?>
     </div>
 </form>

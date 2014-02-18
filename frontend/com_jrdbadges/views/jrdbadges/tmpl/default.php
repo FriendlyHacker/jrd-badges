@@ -17,7 +17,7 @@ $directory_link = "#";
 
 if (! $user->guest) {
     // set to zoo author link if logged in
-    $directory_link = $this->zooItemLink;
+    $directory_link = JUri::root() . $this->zooItemLink;
 }
 
 ?>
@@ -42,20 +42,21 @@ if (! $user->guest) {
 
     <?php foreach ($this->items as $item): ?>
         <h3><?php echo $item->title; ?></h3>
-        <h4><?php echo JText::_('Sample:'); ?></h4>
-        <a href="<?php echo $directory_link; ?>" target="_blank">
-            <img src="<?php echo $item->badge; ?>" alt="Visit my profile on the Joomla! Resources Directory" />
-        </a>
-        <div class="well well-small">
-            <pre>
-                <?php echo htmlentities('
-                    <a href="' . $directory_link .  '">
-                        <img src="' . $item->badge . '" />
-                    </a>
-                ');
-                ?>
-            </pre>
-            Copy and paste this code to your site
-        </div>
 
+        <div class="badge-row">
+            <div class="span6">
+                <a href="<?php echo $directory_link; ?>" target="_blank">
+                    <img src="<?php echo $item->badge; ?>" alt="Visit my profile on the Joomla! Resources Directory" />
+                </a>
+            </div>
+            <div class="span6">
+                <div class="code well well-small">
+                   <?php echo "<pre>" . htmlentities('<a href="' . $directory_link .  '"><img src="' . $item->badge . '" /></a>') . "</pre>"; ?>
+
+                    Copy and paste this code to your site
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <hr />
     <?php endforeach; ?>

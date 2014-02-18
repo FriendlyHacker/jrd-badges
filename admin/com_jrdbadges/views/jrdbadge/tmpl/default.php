@@ -55,7 +55,7 @@ $input = $app->input;
         ?>
 
         <input type="hidden" name="task" value="" />
-        <input type="hidden" name="return" value="<?php echo $input->getCmd('return'); ?>" />
+        <input type="hidden" name="boxchecked" value="0" />
         <?php echo JHtml::_('form.token'); ?>
     </div>
 </form>

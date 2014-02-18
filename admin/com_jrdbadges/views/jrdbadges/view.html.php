@@ -39,8 +39,8 @@ class JrdbadgesViewJrdbadges extends JViewLegacy
 
         JToolbarHelper::addNew('jrdbadge.add');
         JToolbarHelper::editList('jrdbadge.edit');
-        JToolbarHelper::publish('jrdbadge.publish', 'JTOOLBAR_PUBLISH', true);
-        JToolbarHelper::unpublish('jrdbadge.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+        JToolbarHelper::publishList();
+        JToolbarHelper::unpublishList();
 
     }
 }
