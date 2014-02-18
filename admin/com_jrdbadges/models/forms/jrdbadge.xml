@@ -35,8 +35,8 @@
             JTRASHED</option>
     </field>
 
-    <field name="created" type="calendar" label="COM_CONTENT_FIELD_CREATED_LABEL"
-           description="COM_CONTENT_FIELD_CREATED_DESC" class="inputbox" size="22"
+    <field name="created" type="calendar" label="Badge Create Date"
+           description="The date that the badge was created. Defaults to today." class="inputbox" size="22"
            format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
     </fieldset>
 </form>
