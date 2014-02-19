@@ -65,10 +65,12 @@ JHtml::_('formbehavior.chosen', 'select');
                         <?php echo JHtml::_('jgrid.published', $item->published, $i, 'jrdbadges.', true, 'cb'); ?>
                     </td>
                     <td>
-                      <?php echo $this->escape($item->title);  ?>
+                      <a href="index.php?option=com_jrdbadges&task=jrdbadge.edit&id=<?php echo $item->id; ?>">
+                        <?php echo $this->escape($item->title);  ?>
+                      </a>
                     </td>
                     <td>
-                        <a data-toggle="modal" data-target="#badge-<?php echo $item->id; ?>">Preview</a>
+                        <a data-toggle="modal" data-target="#badge-<?php echo $item->id; ?>" href="#">Preview</a>
                         <div class="modal fade" id="badge-<?php echo $item->id; ?>">
                             <div class="modal-dialog">
                                 <div class="modal-content">
