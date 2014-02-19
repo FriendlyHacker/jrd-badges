@@ -24,8 +24,19 @@ class JrdbadgesViewJrdbadges extends JViewLegacy
 
     public function display($tpl = null)
     {
+        // get user object from factory
+        $user = JFactory::getUser();
+
+        // get the items model
         $this->items = $this->get('Items');
-        $this->zooItemLink = $this->get('zooItemLink');
+
+        // default to example
+        $this->zooItemLink = "#";
+
+        // if not guest set to our zoo link
+        if (! $user->guest) {
+            $this->zooItemLink = JUri::root() . $this->get('zooItemLink');
+        }
 
         parent::display($tpl);
     }

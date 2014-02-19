@@ -12,14 +12,6 @@
 
 $user = JFactory::getUser();
 
-// no link
-$directory_link = "#";
-
-if (! $user->guest) {
-    // set to zoo author link if logged in
-    $directory_link = JUri::root() . $this->zooItemLink;
-}
-
 ?>
 <h1>Joomla Resource Directory Badges</h1>
 
@@ -45,13 +37,13 @@ if (! $user->guest) {
 
         <div class="badge-row">
             <div class="span6">
-                <a href="<?php echo $directory_link; ?>" target="_blank">
+                <a href="<?php echo $this->zooItemLink; ?>" target="_blank">
                     <img src="<?php echo $item->badge; ?>" alt="Visit my profile on the Joomla! Resources Directory" />
                 </a>
             </div>
             <div class="span6">
                 <div class="code well well-small">
-                   <?php echo "<pre>" . htmlentities('<a href="' . $directory_link .  '"><img src="' . $item->badge . '" /></a>') . "</pre>"; ?>
+                   <?php echo "<pre>" . htmlentities('<a href="' . $this->zooItemLink .  '"><img src="' . $item->badge . '" /></a>') . "</pre>"; ?>
 
                     Copy and paste this code to your site
                 </div>
