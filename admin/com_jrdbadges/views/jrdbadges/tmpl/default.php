@@ -76,7 +76,7 @@ JHtml::_('formbehavior.chosen', 'select');
                                         <h4>Preview Badge</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <?php if (strpos($item->badge, "http://")): ?>
+                                        <?php if(strpos($item->badge, "http://") !== false): ?>
                                             <img src="<?php echo $item->badge; ?>" />
                                         <?php else: ?>
                                             <img src="<?php echo JUri::root() . $item->badge; ?>" />
