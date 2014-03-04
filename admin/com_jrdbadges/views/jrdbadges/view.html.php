@@ -17,8 +17,11 @@ class JrdbadgesViewJrdbadges extends JViewLegacy
     {
         $this->items         = $this->get('Items');
 
+        JrdbadgesHelper::addSubmenu('jrdbadges');
+
         $this->addToolbar();
         $this->sidebar = JHtmlSidebar::render();
+
 
         parent::display($tpl);
     }

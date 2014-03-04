@@ -43,9 +43,10 @@ class JrdbadgesModelJrdbadges extends JModelList
         $app = JFactory::getApplication();
 
         // Select the required fields from the table.
-        $query->select('*');
+        $query->select('a.*, b.id, b.title as cat_title, b.id');
         $query->from('#__jrdbadges AS a');
-        $query->where('published=1'); // only published listings
+        $query->leftJoin('#__categories as b on b.id = a.catid');
+        $query->where('a.published=1'); // only published listings
 
         return $query;
     }

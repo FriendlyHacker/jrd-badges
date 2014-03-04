@@ -13,6 +13,7 @@
 $user = JFactory::getUser();
 
 ?>
+
 <h1>Joomla Resource Directory Badges</h1>
 
     <?php if ($user->guest): ?>

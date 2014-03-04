@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
-    <fieldset name="jrdbadge">
-    <field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
-           description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0"
-           readonly="true" />
+    <fieldset name="jrdbadge" addfieldpath="/administrator/components/com_categories/models/fields">
+        <field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+               description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0"
+               readonly="true" />
 
-    <field name="title" type="text" label="JGLOBAL_TITLE"
-           description="JFIELD_TITLE_DESC"
-           class="inputbox input-xxlarge input-large-text"
-           size="40"
-           required="true" />
+        <field name="title" type="text" label="JGLOBAL_TITLE"
+               description="JFIELD_TITLE_DESC"
+               class="inputbox input-xxlarge input-large-text"
+               size="40"
+               required="true" />
 
-    <field name="alias" type="text" label="JFIELD_ALIAS_LABEL"
-           description="JFIELD_ALIAS_DESC"
-           hint="JFIELD_ALIAS_PLACEHOLDER"
-           class="inputbox" size="40" />
+        <field name="alias" type="text" label="JFIELD_ALIAS_LABEL"
+               description="JFIELD_ALIAS_DESC"
+               hint="JFIELD_ALIAS_PLACEHOLDER"
+               class="inputbox" size="40" />
 
-    <field name="badge" type="textarea" label="Badge Image Link"
-           description="Badge Link"
-           hint="Badge Link"
-           class="inputbox" size="40" />
+        <field name="badge" type="textarea" label="Badge Image Link"
+               description="Badge Link"
+               hint="Badge Link"
+               class="inputbox" size="40" />
 
         <field id="published"
                name="published"
@@ -40,8 +40,17 @@
                 JTRASHED</option>
         </field>
 
-    <field name="created" type="calendar" label="Badge Create Date"
-           description="The date that the badge was created. Defaults to today." class="inputbox" size="22"
-           format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+        <field name="created" type="calendar" label="Badge Create Date"
+               description="The date that the badge was created. Defaults to today." class="inputbox" size="22"
+               format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+        <field name="catid"
+                type="categoryedit"
+                extension="com_jrdbadges"
+                label="JCATEGORY"
+                description="JFIELD_CATEGORY_DESC"
+                class="inputbox"
+                required="true"
+                />
     </fieldset>
 </form>

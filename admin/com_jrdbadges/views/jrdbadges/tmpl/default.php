@@ -47,6 +47,9 @@ JHtml::_('formbehavior.chosen', 'select');
                     <th>
                         <?php echo JText::_('PREVIEW'); ?>
                     </th>
+                    <th>
+                        <?php echo JText::_('Category'); ?>
+                    </th>
                     <th width="1%" class="nowrap center hidden-phone">
                         <?php echo JText::_('JGRID_HEADING_ID'); ?>
                     </th>
@@ -90,6 +93,9 @@ JHtml::_('formbehavior.chosen', 'select');
                                 </div>
                             </div>
                         </div>
+                    </td>
+                    <td>
+                        <?php echo $this->escape($item->cat_title);  ?>
                     </td>
                     <td class="center hidden-phone">
                         <?php echo $item->id; ?>

@@ -37,6 +37,8 @@ class JrdbadgesController extends JControllerLegacy
         $layout = $this->input->get('layout', 'articles');
         $id     = $this->input->getInt('id');
 
+        require_once JPATH_COMPONENT.'/helpers/jrdbadges.php';
+
         parent::display();
 
         return $this;

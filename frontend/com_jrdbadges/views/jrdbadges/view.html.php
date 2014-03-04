@@ -31,7 +31,7 @@ class JrdbadgesViewJrdbadges extends JViewLegacy
         $this->items = $this->get('Items');
 
         // default to example
-        $this->zooItemLink = "#";
+        $this->zooItemLink = JUri::root();
 
         // if not guest set to our zoo link
         if (! $user->guest) {
